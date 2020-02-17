@@ -36,20 +36,23 @@ static Scanner kb = new Scanner(System.in);
 			airField.tellAllToFly();
 			break;
 		case 3:
-			// view fastest jet
+			airField.fastestAircraft();// view fastest jet
 			break;
 		case 4:
-			// view jet with longest range
+			airField.longestAircraftRange();// view jet with longest range
 			break;
 		case 5:
 			// load cargo plane
 			airField.cargo();
 			break;
-		case 6: // dogfight
+		case 6: 
+			airField.dogFight();// dogfight
 			break;
-		case 7: //add a jet
+		case 7: 
+			airField.addJets();//add a jet
 			break;
-		case 8: //remove a jet
+		case 8: 
+			airField.removeAircraft();//remove a jet
 			break;
 		case 9: // quit
 			break;

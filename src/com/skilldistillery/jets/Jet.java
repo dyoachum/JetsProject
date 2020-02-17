@@ -2,11 +2,17 @@ package com.skilldistillery.jets;
 
 import java.text.DecimalFormat;
 
+	
+
+
 public abstract class Jet {
 	protected String model;
 	protected double speed;
 	protected int range;
 	protected long price;
+	public Jet() {
+		
+	}
 	
 	public Jet(String model, double speed, int range, long price) {
 		super();
@@ -17,20 +23,19 @@ public abstract class Jet {
 	}
 
 	public String fly() {
-		DecimalFormat deciForm = new DecimalFormat("##.##");
+		DecimalFormat deciForm = new DecimalFormat("#.##");
 		double flightTime = range / speed;
 		String fTString = deciForm.format(flightTime);
+		double flightTimeDbl = Double.parseDouble(fTString);
+		int hours = (int) ((flightTimeDbl*60/60));
+		int minutes = (int) ((flightTimeDbl*60)%60);
+		
+		System.out.println("The " + model + " flies at " + speed + " MPH with a distance of " + range 
+				+ " miles in " + hours + " hours and " + minutes + " minutes.");
 		return fTString;
 		
 	}
 		
-			
-		
-	
-	public  double getSpeedInMach() {
-		return 0;   
-	}
-
 	
 
 	public String getModel() {
